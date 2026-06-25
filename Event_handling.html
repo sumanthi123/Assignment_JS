@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Handling Assignment</title>
+
+    <style>
+        .color-btn{
+            width:80px;
+            height:50px;
+            border:2px solid black;
+            margin:10px;
+            cursor:pointer;
+        }
+
+        #red{
+            background:red;
+        }
+
+        #blue{
+            background:blue;
+        }
+
+        #green{
+            background:green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Enter the number</h2>
+
+    <input type="number" id="a">
+
+    <br><br>
+
+    <button onclick="findFactorial()">
+        Find Factorial
+    </button>
+
+    <br><br>
+
+    <h3>
+        Result :
+        <span id="result"></span>
+    </h3>
+
+    <br>
+
+    <button id="red" class="color-btn"
+        onclick="changeColor('red')">
+    </button>
+
+    <button id="blue" class="color-btn"
+        onclick="changeColor('blue')">
+    </button>
+
+    <button id="green" class="color-btn"
+        onclick="changeColor('green')">
+    </button>
+
+    <script>
+
+        function findFactorial()
+        {
+            let num =
+            Number(document.getElementById("a").value);
+
+            let fact = 1;
+
+            for(let i = 1; i <= num; i++)
+            {
+                fact = fact * i;
+            }
+
+            document.getElementById("result").innerHTML =
+            fact;
+        }
+
+        function changeColor(color)
+        {
+            document.body.style.backgroundColor =
+            color;
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Blog</title>
+</head>
+<body>
+
+    <h1 id="mainHeading">Food Blog</h1>
+
+    <h3 id="aboutHeading">About Blogger</h3>
+
+    <p class="blogPara">
+        I love food blogging.
+    </p>
+
+    <p class="blogPara">
+        I visit different restaurants.
+    </p>
+
+    <p class="blogPara">
+        I share recipes and reviews.
+    </p>
+
+    <div id="food">
+        <h3>Food Varieties</h3>
+
+        <ul>
+            <li>Indian</li>
+            <li>Italian</li>
+            <li>Chinese</li>
+            <li>South Indian</li>
+        </ul>
+    </div>
+
+    <div id="menu">
+
+        <h3>Indian Food</h3>
+        <p class="menuPara">Indian food paragraph</p>
+
+        <h3>Italian</h3>
+        <p class="menuPara">Italian paragraph</p>
+
+        <h3>Chinese</h3>
+        <p class="menuPara">Chinese paragraph</p>
+
+        <h3>South Indian</h3>
+        <p class="menuPara">South Indian paragraph</p>
+
+    </div>
+
+    <script>
+
+        // 1. getElementById()
+        let h1 = document.getElementById("mainHeading");
+        h1.style.color = "blue";
+
+        // 2. H3 change green to red and font family
+        let h3 = document.getElementById("aboutHeading");
+        h3.style.color = "red";
+        h3.style.fontFamily = "Arial";
+
+        // 3. querySelector() - first paragraph
+        let firstPara = document.querySelector(".blogPara");
+        firstPara.style.color = "blue";
+
+        // 4. querySelectorAll() - all paragraphs
+        let paras = document.querySelectorAll(".blogPara");
+
+        paras.forEach((p) => {
+            p.style.backgroundColor = "violet";
+        });
+
+        // 5. querySelector() inside food div
+        let foodItems = document.querySelectorAll("#food li");
+
+        foodItems.forEach((item) => {
+            item.style.fontSize = "13px";
+            item.style.color = "orange";
+        });
+
+        // 6. getElementsByClassName()
+        let menuParas = document.getElementsByClassName("menuPara");
+
+        // 1st paragraph
+        menuParas[0].style.color = "red";
+
+        // 2nd paragraph
+        menuParas[1].style.color = "grey";
+        menuParas[1].style.fontSize = "15px";
+
+        // 4th paragraph
+        menuParas[3].style.color = "grey";
+        menuParas[3].style.fontSize = "15px";
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Test</title>
+</head>
+<body>
+
+    <h1>Javascript Test</h1>
+
+    <h3>Date: <span id="date"></span></h3>
+    <h3>Time Left: <span id="timer">10:00</span></h3>
+
+    <h2>Test Duration : 10 mins</h2>
+
+    <p>Hello we are into Demo Test</p>
+
+    <button id="submitBtn">Submit</button>
+
+    <script>
+
+        // Display Current Date
+        document.getElementById("date").innerHTML =
+            new Date().toLocaleDateString();
+
+        // 10 minutes = 600 seconds
+        let timeLeft = 600;
+
+        let intervalId = setInterval(() => {
+
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+
+            document.getElementById("timer").innerHTML =
+                `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+
+            timeLeft--;
+
+            // Auto Submit after 10 minutes
+            if (timeLeft < 0) {
+                clearInterval(intervalId);
+
+                alert("Time is over. Test Auto Submitted!");
+                submitTest();
+            }
+
+        }, 1000);
+
+        // Submit Button
+        document.getElementById("submitBtn")
+            .addEventListener("click", () => {
+
+                clearInterval(intervalId);
+
+                alert("Test Submitted Successfully!");
+                submitTest();
+            });
+
+        function submitTest() {
+            console.log("Submitting test...");
+            // API call or form submit code here
+        }
+
+    </script>
+
+</body>
+</html>
